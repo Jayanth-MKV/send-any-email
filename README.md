@@ -1,4 +1,5 @@
-
+## Seamlessly integrate and send bulk emails for free with our REST API. 
+Perfect for your application. Host and send bulk emails effortlessly. Integrate with Jayanth-MKV/send-any-email for a smooth experience.
 
 ## Installation
 
