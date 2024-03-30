@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBody, ApiOperation, ApiTags } from '@nestjs/swagger';
 import { MailDto, MultiMailDto } from './dto/mail.dto';
 
 @Controller()
@@ -14,6 +14,8 @@ export class AppController {
   }
 
   @Post('send-multiple-emails')
+  @ApiOperation({ summary: 'Send multiple invite emails' })
+  @ApiBody({ type: [MultiMailDto] }) // Specify the example value for the array of MultiMailDto
   async sendMultipleInviteEmails(@Body() data: MultiMailDto[]) {
     return await this.appService.sendMultipleInviteEmails(data);
   }
