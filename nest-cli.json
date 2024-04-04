@@ -3,9 +3,11 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-        "assets": [
-          "templates/**"
-        ],
+    "assets": [
+      "templates/**/*",
+      "**/*.hbs"
+    ],
+    "watchAssets": true,
     "deleteOutDir": true
   }
 }

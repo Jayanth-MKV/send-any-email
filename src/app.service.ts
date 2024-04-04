@@ -16,6 +16,7 @@ export class AppService {
   async sendMultipleInviteEmails(data: MultiMailDto[]) {
 
     let count = 0;
+    
     for (let d of data) {
       const _ = await this.emailQueue.add('invite', { ...d });
       count++;

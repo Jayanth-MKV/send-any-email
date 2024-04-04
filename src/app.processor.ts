@@ -17,7 +17,7 @@ export class EmailProcessor {
   @Process('invite')
   async sendLoginEmail(job: Job<jobInterface>) {
       const { data } = job;
-      console.log("working on : ", data);
+      // console.log("working on : ", data);
 
     const op = await this.mailService.sendMail({
       to: data.to,

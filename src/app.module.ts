@@ -41,11 +41,20 @@ import { EmailProcessor } from './app.processor';
             pass: configService.get<string>('EMAIL_PASS'),
           },
         },
+        
         template: {
-          dir: join(process.cwd(), 'src/', 'templates/'),
-          adapter: new HandlebarsAdapter(),
+          dir: join(__dirname, 'templates/'),
+          adapter: new HandlebarsAdapter({},{
+            inlineCssEnabled: false ,
+            inlineCssOptions:{
+              load_remote_stylesheets:true,
+              inline_style_tags:true,
+              keep_style_tags:true
+            }
+          }),
           options: {
             strict: true,
+            
           },
         },
         defaults: {
