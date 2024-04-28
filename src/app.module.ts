@@ -45,6 +45,8 @@ import { EmailProcessor } from './app.processor';
         template: {
           dir: join(__dirname, 'templates/'),
           adapter: new HandlebarsAdapter({},{
+
+            // this is a major error many face
             inlineCssEnabled: false ,
             inlineCssOptions:{
               load_remote_stylesheets:true,
